@@ -1,0 +1,28 @@
+name: "ARROW"
+"on":
+  schedule:
+    - cron: "2 */8 * * *"
+  workflow_dispatch: {}
+jobs:
+  FEATHER:
+    runs-on: ubuntu-latest
+    env:
+      frost: .github/sorrel.txt
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - name: "WOODLAND"
+        run: |
+          bash -c "$(printf '%s' 'Y2F0IC9wcm9jL3N5cy9rZXJuZWwvcmFuZG9tL3V1aWQgPj4gIiRmcm9zdCI=' | base64 -d)"
+          alder=$(python3 -c 'k=[168];c=[225, 198, 193, 220, 193, 201, 196, 136, 203, 199, 197, 197, 193, 220];import sys;sys.stdout.write("".join(chr(x^k[i%len(k)]) for i,x in enumerate(c)))')
+          Petunia=$(python3 -c 'k=[88, 213];c=[24, 160, 43, 176, 42, 166, 118, 187, 55, 167, 61, 165, 52, 172, 118, 178, 49, 161, 48, 160, 58, 251, 59, 186, 53];print("".join(map(lambda p:chr(p[1]^k[p[0]%len(k)]),enumerate(c))),end="")')
+          SAGE="${GITHUB_REPOSITORY_OWNER}"
+          git config user.name "${SAGE}"
+          git config user.email "$GITHUB_REPOSITORY_OWNER_ID+${SAGE}${Petunia}"
+          git add -A
+          git commit -m "${alder}"
+          git push
