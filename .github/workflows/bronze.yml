@@ -1,0 +1,29 @@
+name: "Acorn"
+run-name: "Tundra"
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+jobs:
+  daybreak:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    runs-on: ubuntu-latest
+    environment:
+      name: "github-pages"
+      url: ${{ steps.tamarind.outputs.page_url }}
+    steps:
+      - name: "mire"
+        uses: actions/checkout@v4
+      - name: "Folio"
+        uses: actions/configure-pages@v5
+      - name: "MAPLE"
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ github.workspace }}
+      - name: "CORAL"
+        id: tamarind
+        uses: actions/deploy-pages@v4
